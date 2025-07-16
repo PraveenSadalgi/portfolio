@@ -124,7 +124,7 @@ const HeroSection = () => {
                 <a href="#projects" className="inline-block">
                   <Button 
                     size="lg" 
-                    className="bg-primary hover:bg-primary/90 transform transition-all duration-300 view-projects-button flex items-center gap-2"
+                    className="bg-primary hover:bg-primary/100 transform transition-all duration-300 view-projects-button flex items-center gap-2"
                   >
                     View Projects <ArrowRight className="h-5 w-5 animate-bounce-right" />
                   </Button>
@@ -137,7 +137,7 @@ const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <a href="#contact">
-                  <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                  <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/100">
                     Contact Me
                   </Button>
                 </a>

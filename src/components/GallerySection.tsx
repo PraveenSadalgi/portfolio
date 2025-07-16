@@ -6,7 +6,7 @@ import premiumPhoto from "@/images/IMG-20250623-WA0004.jpg";
 import newImage from "@/images/IMG-20250623-WA0003.jpg";
 import newImage2 from "@/images/IMG-20250623-WA0006.jpg";
 import newImage3 from "@/images/IMG-20250623-WA0005.jpg"; 
-
+import newImage4 from "@/images/WhatsApp Image 2025-06-22 at 20.39.09_a89ef5e0.jpg"; // New image added
 interface GalleryImage {
   id: number;
   thumbnail: string;
@@ -23,7 +23,7 @@ const GallerySection = () => {
   const galleryImages: GalleryImage[] = [
     {
       id: 1,
-      thumbnail: premiumPhoto,
+      thumbnail: newImage3, // Using the new imported image
       title: "KLE BCA Web Dev Winner",
       description: "Receiving the first place award at the KLE BCA Web Development competition, where our innovative approach to responsive design earned recognition.",
       category: "awards"
@@ -31,10 +31,10 @@ const GallerySection = () => {
     // CHANGED IMAGE - Replaced with new local image
     {
       id: 2,
-      thumbnail: newImage, // Using the new imported image
-      title: "Nature Photography",
-      description: "Beautiful landscape captured during my travels showcasing natural wonders.",
-      category: "nature"
+      thumbnail: newImage4, // Using the new imported image
+      title: "Winner KLE BCA Hackathon,Chikodi,Karnataka",
+      description: "Winning the KLE BCA Hackathon with our team, where we developed a cutting-edge AI solution to enhance the way of learning for students.",
+      category: "Education"
     },
     // OTHER IMAGES - Add/change images here following the same pattern
     {
@@ -46,21 +46,21 @@ const GallerySection = () => {
     },
     {
       id: 4,
-      thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      thumbnail: newImage3,
       title: "Award Ceremony",
-      description: "Being recognized at the award ceremony of KLE BCA Hackathon for developing an innovative mobile application that helps connect local farmers to consumers.",
+      description: "Showcasing our project to the judges at Jain Engineering College Hackathon. We built a blockchain-based solution for secure digital credential verification.",
       category: "awards"
     },
     {
       id: 5,
-      thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      thumbnail: premiumPhoto,
       title: "Project Showcase",
-      description: "Showcasing our project to the judges at Agadi College Hackathon. We built a blockchain-based solution for secure digital credential verification.",
+      description: "Being recognized at the award ceremony of  Agadi College Hackathon for developing an innovative mobile application that helps connect local farmers to consumers.",
       category: "projects"
     },
     {
       id: 6,
-      thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      thumbnail:newImage,
       title: "Certificate Reception",
       description: "Receiving a certificate of achievement at the KLE BCA event for outstanding contributions to web development innovation and community service.",
       category: "awards"

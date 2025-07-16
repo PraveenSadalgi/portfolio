@@ -102,7 +102,7 @@ const AboutSection = () => {
                     ease: "easeInOut"
                   }}
                 >
-                  PS
+                  Praveen M S
                 </motion.span>
               </div>
 
