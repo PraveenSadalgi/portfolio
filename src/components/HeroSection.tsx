@@ -2,7 +2,9 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
-import { ArrowRight, Cuboid } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+// Prism removed as per request
+import premiumPhoto from "@/images/WhatsApp Image 2025-11-22 at 19.11.39_eceb784b.jpg";
 
 // TypedText component for typing animation effect
 const TypedText = ({ text }: { text: string }) => {
@@ -23,49 +25,12 @@ const TypedText = ({ text }: { text: string }) => {
 };
 
 const HeroSection = () => {
-  // Reference for 3D hero image effect
-  const heroImageRef = useRef<HTMLDivElement>(null);
-  
-  // Effect for 3D mouse movement tracking
-  useEffect(() => {
-    const heroImage = heroImageRef.current;
-    if (!heroImage) return;
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      const { left, top, width, height } = heroImage.getBoundingClientRect();
-      const x = (e.clientX - left) / width - 0.5;
-      const y = (e.clientY - top) / height - 0.5;
-      
-      heroImage.style.transform = `
-        perspective(1000px)
-        rotateY(${x * 10}deg)
-        rotateX(${-y * 10}deg)
-        translateZ(20px)
-      `;
-    };
-    
-    const handleMouseLeave = () => {
-      heroImage.style.transform = `
-        perspective(1000px)
-        rotateY(0deg)
-        rotateX(0deg)
-        translateZ(0)
-      `;
-    };
-    
-    document.addEventListener('mousemove', handleMouseMove);
-    heroImage.addEventListener('mouseleave', handleMouseLeave);
-    
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      heroImage.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, []);
+  // Prism removed — no background animation
 
   return (
     <section id="home" className="relative min-h-screen flex items-center">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 -z-10"></div>
+      {/* Background gradient (behind prism) */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 -z-20"></div>
       
       {/* Animated background elements */}
       <motion.div 
@@ -93,6 +58,8 @@ const HeroSection = () => {
         }}
       />
       
+      {/* Prism background removed */}
+
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <motion.div 
@@ -157,50 +124,37 @@ const HeroSection = () => {
             </div>
           </motion.div>
           
-          {/* 3D hero image/animation */}
+          {/* 3D Prism Animation */}
           <motion.div 
-            className="lg:col-span-5 hidden lg:block"
+            className="lg:col-span-5 hidden lg:flex items-center justify-center h-full"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div 
-              ref={heroImageRef}
-              className="relative transition-transform duration-300 ease-out"
-              style={{ transformStyle: 'preserve-3d' }}
-            >
-              <div className="w-full h-96 bg-gradient-to-br from-primary to-secondary rounded-2xl shadow-xl overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-white text-9xl font-bold opacity-20">
-                  <Cuboid className="w-48 h-48" />
-                </div>
+            <div className="relative w-full h-96">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <motion.img
+                  src={premiumPhoto}
+                  alt="Praveen"
+                  initial={{ scale: 0.98, opacity: 0.95 }}
+                  animate={{ scale: [0.98, 1.02, 0.99], rotate: [0, 1.5, -1.5, 0] }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                />
               </div>
               <motion.div 
-                className="absolute -bottom-4 -right-4 w-24 h-24 bg-white dark:bg-gray-800 rounded-xl shadow-lg flex items-center justify-center"
+                className="absolute -bottom-4 -right-4 w-20 h-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl shadow-lg flex items-center justify-center"
                 animate={{ 
                   rotateY: [0, 180, 360],
                   rotateX: [0, 180, 0]
                 }}
                 transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-                style={{ transformStyle: 'preserve-3d' }}
-              >
-                <span className="text-4xl transform-gpu" style={{ backfaceVisibility: 'hidden' }}>💻</span>
-              </motion.div>
-              <motion.div 
-                className="absolute -top-4 -left-4 w-24 h-24 bg-white dark:bg-gray-800 rounded-xl shadow-lg flex items-center justify-center"
-                animate={{ 
-                  rotateZ: [0, 360]
-                }}
-                transition={{
-                  duration: 15,
+                  duration: 12,
                   repeat: Infinity,
                   ease: "linear"
                 }}
               >
-                <span className="text-4xl">🏆</span>
+                <span className="text-3xl">🚀</span>
               </motion.div>
             </div>
           </motion.div>

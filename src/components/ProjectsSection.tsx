@@ -12,6 +12,8 @@ import newImage2 from "@/images/premium_photo-1681293215038-2717d2b84c0d.avif";
 import newImage3 from "@/images/premium_photo-1716999684556-f2f310f27e3a.avif";
 import newImage4 from "@/images/vyacheslav-khaisarov-CkA9ZJ069ro-unsplash.jpg";
 import newImage5 from "@/images/the-blowup-xBqM6cfgP4U-unsplash.jpg";
+import resuai from "@/images/Screenshot 2025-11-22 193751.png";
+import city from "@/images/WhatsApp Image 2025-11-16 at 00.22.52_2b13b601.jpg";
 interface Project {
   title: string;
   description: string;
@@ -23,6 +25,26 @@ interface Project {
 
 const ProjectsSection = () => {
   const projects: Project[] = [
+
+{
+      title: "CityPluse",
+      description: "A AI powered smart city management platform where the citizens can report issues and get real-time updates, and a admnin can manage and resolve the issues efficiently with help of a dedicated dashboard and realtime location tracking.",
+       image: city,
+      techStack: ["React", "TypeScript", "SupaBase"],
+      github: "https://github.com/PraveenSadalgi/citypulse2.0", 
+      live: "https://citypulse2-0.vercel.app/",
+    },
+
+    {
+      title: "ResuAI",
+      description: "A AI powered smart resume builder where users can chose from multiple templates and customize their resumes with ease by just saying their details without typing and improving their resume quality and words wit the help of AI.",
+       image:  resuai,
+      techStack: ["React", "TypeScript", "SupaBase"],
+      github: "https://github.com/PraveenSadalgi/resuai", 
+      live: "https://final2resume.vercel.app/",
+    },
+
+
     {
       title: "QR Code Generator",
       description: "A simple yet powerful QR code generator built with pure HTML, CSS, and JavaScript.",
@@ -61,6 +83,8 @@ const ProjectsSection = () => {
        image: newImage5,
       techStack: ["React", "TypeScript", "Express.js", "MongoDB"],
     },
+
+    
   ];
 
   const container = {
